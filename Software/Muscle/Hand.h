@@ -3,11 +3,6 @@
 class Hand
 {
 private:
-    Finger m_finger1;
-    Finger m_finger2;
-    Finger m_finger3;
-    Finger m_finger4;
-    Finger m_finger5;
 
 public:
     Hand();
@@ -15,13 +10,10 @@ public:
 
     void update();
 
-    void closeHand();
-    void closeFinger();
+    void close();
+    void free();
+    void open();
 
-    void freeHand();
-    void freeFinger();
-    
-    void openHand();
-    void openFinger();
+    Finger *finger[5];
 };
 

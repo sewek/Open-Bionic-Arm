@@ -3,9 +3,11 @@
 class Finger
 {
 private:
-    Muscle m_muscle1;
-    Muscle m_muscle2;
-    Muscle m_muscle3;
+    void m_set_force_all(int);
+
+    int m_force_close = 200;
+    int m_force_free = 10;
+    int m_force_open = 0;
 
 public:
     Finger();
@@ -13,7 +15,9 @@ public:
 
     void update();
 
-    void setForce(int);
-    int getForce();
+    void close();
+    void free();
+    void open();
 
+    Muscle *muscle[3];
 };
