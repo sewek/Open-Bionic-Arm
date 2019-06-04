@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode
+# Created by https://www.gitignore.io/api/c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode,eagle
+# Edit at https://www.gitignore.io/?templates=c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode,eagle
 
 ### C ###
 # Prerequisites
@@ -561,4 +561,57 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
-# End of https://www.gitignore.io/api/c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode
+### Eagle ###
+# Ignore list for Eagle, a PCB layout tool
+
+# Backup files
+*.s#?
+*.b#?
+*.l#?
+*.b$?
+*.s$?
+*.l$?
+
+# Eagle project file
+# It contains a serial number and references to the file structure
+# on your computer.
+# comment the following line if you want to have your project file included.
+eagle.epf
+
+# Autorouter files
+*.pro
+*.job
+
+# CAM files
+*.$$$
+*.cmp
+*.ly2
+*.l15
+*.sol
+*.plc
+*.stc
+*.sts
+*.crc
+*.crs
+
+*.dri
+*.drl
+*.gpi
+*.pls
+*.ger
+*.xln
+
+*.drd
+*.drd.*
+
+*.s#*
+*.b#*
+
+*.info
+
+*.eps
+
+# file locks introduced since 7.x
+*.lck
+
+# End of https://www.gitignore.io/api/c,c++,xcode,eclipse,sublimetext,visualstudio,visualstudiocode,eagle
