@@ -6,7 +6,7 @@
  * Specify number of sensors to read .
  * 
  */
-#define SENSORS_NUM     2
+#define SENSORS_NUM     1
 
 /**
  * BOARD:
@@ -20,7 +20,7 @@
  * Set serial baudrate.
  * 
  */
-#define SERIAL_SPEED    115200
+#define SERIAL_SPEED    520000
 
 /**
  * VERBOSE:

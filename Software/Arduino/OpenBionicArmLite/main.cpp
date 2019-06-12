@@ -7,9 +7,9 @@
 // Local Variables
 volatile bool conversion_flag = false;
 volatile bool start_conversion = false;
-volatile unsigned int interval = 10;
-volatile uint16_t sensors_value[SENSORS_NUM];
-volatile uint16_t sensors_deltatime[SENSORS_NUM];
+volatile unsigned int interval = 1;
+volatile unsigned int sensors_value[SENSORS_NUM];
+volatile unsigned int sensors_deltatime[SENSORS_NUM];
 volatile unsigned long sensors_oldtime[SENSORS_NUM];
 
 // Nah Variables
@@ -84,9 +84,13 @@ void communication()
             for (uint8_t i = 0; i < SENSORS_NUM; i++)
             {
                 //TODO: Make limits 1 byte, 2 bytes, 2 bytes.
+                Serial.print("D");
                 Serial.print(i, DEC);
+                Serial.print(";");
                 Serial.print(sensors_value[i], DEC);
+                Serial.print(";");
                 Serial.print(sensors_deltatime[i], DEC);
+                Serial.println();
             }
             conversion_flag = true;
         }
@@ -104,7 +108,7 @@ void work()
         if (sensors_oldtime[i] == 0)
             sensors_oldtime[i] = millis();
 
-        sensors_value[i] = analogRead(SENSORS_PINS[i]);
+        sensors_value[i] = map(analogRead(SENSORS_PINS[i]), 0, 1023, 0, 10000 );
         sensors_deltatime[i] = millis() - sensors_oldtime[i];
         sensors_oldtime[i] = millis();
     }
@@ -113,5 +117,5 @@ void work()
 
 void idle()
 {
-    delay(1);
+    delay(interval);
 }
