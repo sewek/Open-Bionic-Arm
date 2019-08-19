@@ -60,6 +60,9 @@ def read_data(serial_port: serial.Serial):
     m_data = m_data.replace("'", "")
     m_data = m_data.strip()
     
+    if len(m_data) < 3:
+        return None
+
     if m_data[0] == "D":
         ret = protocol
         m_data = m_data.replace("D", "")

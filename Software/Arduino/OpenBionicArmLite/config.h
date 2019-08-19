@@ -20,13 +20,13 @@
  * Set serial baudrate.
  * 
  */
-#define SERIAL_SPEED    520000
+#define SERIAL_SPEED    115200
 
 /**
  * VERBOSE:
  * Uncomment if you want to see all logs.
  * 
  */
-//#define VERBOSE
+#define VERBOSE
 
 #endif

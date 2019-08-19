@@ -12,6 +12,7 @@ void setup()
 void loop()
 {
     communication();
+    Serial.flush();
     work();
-    idle();
+    //idle();
 }

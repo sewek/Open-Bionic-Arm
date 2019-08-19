@@ -2,15 +2,17 @@
 #include "commands.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <Arduino.h>
 
 // Local Variables
 volatile bool conversion_flag = false;
 volatile bool start_conversion = false;
-volatile unsigned int interval = 1;
-volatile unsigned int sensors_value[SENSORS_NUM];
-volatile unsigned int sensors_deltatime[SENSORS_NUM];
-volatile unsigned long sensors_oldtime[SENSORS_NUM];
+volatile int conversions_number = 0;
+volatile unsigned int interval = 2;
+volatile unsigned int** sensors_value;
+volatile unsigned int** sensors_deltatime;
+volatile unsigned long** sensors_oldtime;
 
 // Nah Variables
 volatile uint8_t m_byte;
@@ -36,44 +38,45 @@ void communication()
 {
     if (Serial.available() > 0)
     {
-        switch (Serial.read())
+        Serial.println("Elo");
+        String cmd = Serial.readStringUntil('\n');
+        
+        #if defined(VERBOSE)
+          Serial.println(cmd);
+        #endif
+        
+        if (cmd == OK)
         {
-        case OK:
             // Nothing
-            break;
-
-        case ERROR:
+        }
+        else if (cmd == ERROR)
+        {
             // Nothing
-            break;
-
-        case START_CONVERSION:
+        }
+        else if (cmd == START_CONVERSION)
+        {
+            conversions_number = Serial.readStringUntil(';').toInt();
             start_conversion = true;
             conversion_flag = true;
-            break;
-
-        case STOP_CONVERSION:
+        }
+        else if (cmd == STOP_CONVERSION)
+        {
             start_conversion = false;
             conversion_flag = false;
-            break;
-
-        case SET_INTERVALS:
-            interval = 0;
-            while (true)
-            {
-                m_byte = Serial.read();
-                if (m_byte == '\n')
-                    break;
-                interval <<= 8;
-                interval |= (1<<m_byte);
-            }
-            break;
-
-        case GET_RESOLUTION:
-            Serial.print(10, DEC); //TODO: Make it more automatic.
-            break;
-        
-        default:
-            break;
+        }
+        else if (cmd == SET_INTERVALS)
+        {
+            interval = Serial.readStringUntil(';').toInt();
+        }
+        else if (cmd == GET_RESOLUTION)
+        {
+            Serial.println(10, DEC); //TODO: Make it more automatic.
+        }
+        else
+        {
+            #if defined(VERBOSE)
+                Serial.println("Command not found!");
+            #endif
         }
     }
 
@@ -81,21 +84,23 @@ void communication()
     {
         if (!conversion_flag)
         {
-            for (uint8_t i = 0; i < SENSORS_NUM; i++)
+            for (int j = 0; j < conversions_number; j++)
             {
-                //TODO: Make limits 1 byte, 2 bytes, 2 bytes.
-                Serial.print("D");
-                Serial.print(i, DEC);
-                Serial.print(";");
-                Serial.print(sensors_value[i], DEC);
-                Serial.print(";");
-                Serial.print(sensors_deltatime[i], DEC);
-                Serial.println();
+                for (uint8_t i = 0; i < SENSORS_NUM; i++)
+                {
+                    //TODO: Make limits 1 byte, 2 bytes, 2 bytes.
+                    Serial.print("D");
+                    Serial.print(i, DEC);
+                    Serial.print(";");
+                    Serial.print(sensors_value[j][i], DEC);
+                    Serial.print(";");
+                    Serial.print(sensors_deltatime[j][i], DEC);
+                    Serial.println();
+                }
             }
             conversion_flag = true;
         }
     }
-    
 }
 
 void work()
@@ -103,15 +108,30 @@ void work()
     if (!conversion_flag || !start_conversion)
         return;
     
-    for (uint8_t i = 0; i < SENSORS_NUM; i++)
-    {
-        if (sensors_oldtime[i] == 0)
-            sensors_oldtime[i] = millis();
+    free(sensors_value);
+    free(sensors_deltatime);
+    free(sensors_oldtime);
 
-        sensors_value[i] = map(analogRead(SENSORS_PINS[i]), 0, 1023, 0, 10000 );
-        sensors_deltatime[i] = millis() - sensors_oldtime[i];
-        sensors_oldtime[i] = millis();
+    sensors_value = malloc(conversions_number*sizeof(int));
+    sensors_deltatime = malloc(conversions_number*sizeof(int));
+    sensors_oldtime = malloc(conversions_number*sizeof(long));
+
+    for (int j = 0; j < conversions_number; j++)
+    {
+        sensors_value[j] = malloc(SENSORS_NUM*sizeof(int));
+        sensors_deltatime[j] = malloc(SENSORS_NUM*sizeof(int));
+        sensors_oldtime[j] = malloc(SENSORS_NUM*sizeof(long));
+        for (uint8_t i = 0; i < SENSORS_NUM; i++)
+        {
+            if (sensors_oldtime[j][i] == 0)
+                sensors_oldtime[j][i] = millis();
+    
+            sensors_value[j][i] = map(analogRead(SENSORS_PINS[i]), 0, 1023, 0, 10000);
+            sensors_deltatime[j][i] = millis() - sensors_oldtime[j][i];
+            sensors_oldtime[j][i] = millis();
+        }
     }
+    
     conversion_flag = false;
 }
 

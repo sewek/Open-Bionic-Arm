@@ -1,15 +1,15 @@
 #ifndef _COMMANDS_H_
 #define _COMMANDS_H_
 
-#define OK                  0xa0
-#define ERROR               0xa1
+#define OK                  "OK"
+#define ERROR               "ERROR"
 
-#define START_CONVERSION    0xaa
-#define STOP_CONVERSION     0xab
+#define START_CONVERSION    "start"
+#define STOP_CONVERSION     "stop"
 
-#define SET_INTERVALS       0xad
+#define SET_INTERVALS       "interval"
 
-#define GET_RESOLUTION      0xae
+#define GET_RESOLUTION      "resolution"
 
 
 #endif
