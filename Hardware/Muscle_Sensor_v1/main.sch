@@ -24261,6 +24261,10 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1"/>
 <part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1"/>
+<part name="SV3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
+<part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
+<part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P-5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V-" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24306,15 +24310,15 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <attribute name="VALUE" x="97.79" y="104.14" size="1.778" layer="96"/>
 </instance>
 <instance part="IC1" gate="P" x="5.08" y="114.3" smashed="yes"/>
-<instance part="SV1" gate="G$1" x="5.08" y="45.72" smashed="yes">
-<attribute name="VALUE" x="3.81" y="38.1" size="1.778" layer="96"/>
-<attribute name="NAME" x="3.81" y="51.562" size="1.778" layer="95"/>
+<instance part="SV1" gate="G$1" x="5.08" y="50.8" smashed="yes">
+<attribute name="VALUE" x="3.81" y="43.18" size="1.778" layer="96"/>
+<attribute name="NAME" x="3.81" y="56.642" size="1.778" layer="95"/>
 </instance>
-<instance part="P+1" gate="1" x="17.78" y="25.4" smashed="yes" rot="R270">
-<attribute name="VALUE" x="15.24" y="27.94" size="1.778" layer="96"/>
+<instance part="P+1" gate="1" x="17.78" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="15.24" y="25.4" size="1.778" layer="96"/>
 </instance>
-<instance part="P-1" gate="1" x="17.78" y="10.16" smashed="yes" rot="R90">
-<attribute name="VALUE" x="15.24" y="5.08" size="1.778" layer="96"/>
+<instance part="P-1" gate="1" x="17.78" y="7.62" smashed="yes" rot="R90">
+<attribute name="VALUE" x="15.24" y="2.54" size="1.778" layer="96"/>
 </instance>
 <instance part="GND1" gate="1" x="22.86" y="7.62" smashed="yes">
 <attribute name="VALUE" x="20.32" y="5.08" size="1.778" layer="96"/>
@@ -24322,8 +24326,8 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <instance part="GND2" gate="1" x="17.78" y="58.42" smashed="yes">
 <attribute name="VALUE" x="15.24" y="55.88" size="1.778" layer="96"/>
 </instance>
-<instance part="GND3" gate="1" x="17.78" y="38.1" smashed="yes">
-<attribute name="VALUE" x="15.24" y="35.56" size="1.778" layer="96"/>
+<instance part="GND3" gate="1" x="17.78" y="43.18" smashed="yes">
+<attribute name="VALUE" x="15.24" y="40.64" size="1.778" layer="96"/>
 </instance>
 <instance part="P+2" gate="1" x="5.08" y="129.54" smashed="yes">
 <attribute name="VALUE" x="2.54" y="127" size="1.778" layer="96" rot="R90"/>
@@ -24458,13 +24462,13 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <attribute name="NAME" x="44.323" y="163.0426" size="1.778" layer="95"/>
 <attribute name="VALUE" x="44.323" y="157.9626" size="1.778" layer="96"/>
 </instance>
-<instance part="K1" gate="G$1" x="5.08" y="17.78" smashed="yes" rot="R180">
-<attribute name="NAME" x="6.35" y="18.542" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="6.35" y="21.59" size="1.778" layer="96" rot="R180"/>
+<instance part="K1" gate="G$1" x="5.08" y="15.24" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="16.002" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="6.35" y="19.05" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="K2" gate="G$1" x="-5.08" y="17.78" smashed="yes" rot="R180">
-<attribute name="NAME" x="-3.81" y="18.542" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-3.81" y="21.59" size="1.778" layer="96" rot="R180"/>
+<instance part="K2" gate="G$1" x="-5.08" y="15.24" smashed="yes" rot="R180">
+<attribute name="NAME" x="-3.81" y="16.002" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-3.81" y="19.05" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R10" gate="G$1" x="152.4" y="66.04" smashed="yes" rot="R90">
 <attribute name="NAME" x="156.21" y="60.071" size="1.778" layer="95" rot="R180"/>
@@ -24485,6 +24489,19 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <attribute name="NAME" x="14.732" y="92.0242" size="1.778" layer="95"/>
 <attribute name="VALUE" x="14.732" y="88.9762" size="1.778" layer="96"/>
 </instance>
+<instance part="SV3" gate="G$1" x="5.08" y="33.02" smashed="yes">
+<attribute name="VALUE" x="3.81" y="25.4" size="1.778" layer="96"/>
+<attribute name="NAME" x="3.81" y="38.862" size="1.778" layer="95"/>
+</instance>
+<instance part="P+7" gate="1" x="20.32" y="35.56" smashed="yes" rot="R270">
+<attribute name="VALUE" x="17.78" y="38.1" size="1.778" layer="96"/>
+</instance>
+<instance part="GND11" gate="1" x="25.4" y="27.94" smashed="yes">
+<attribute name="VALUE" x="22.86" y="25.4" size="1.778" layer="96"/>
+</instance>
+<instance part="P-5" gate="1" x="20.32" y="30.48" smashed="yes" rot="R90">
+<attribute name="VALUE" x="17.78" y="25.4" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -24492,25 +24509,25 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <net name="GND" class="0">
 <segment>
 <pinref part="SV1" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="43.18" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="40.64" x2="17.78" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="48.26" x2="12.7" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="45.72" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="12.7" y1="15.24" x2="22.86" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="15.24" x2="22.86" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="12.7" x2="22.86" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="12.7" x2="22.86" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <pinref part="K1" gate="G$1" pin="2"/>
 <pinref part="K1" gate="G$1" pin="3"/>
-<wire x1="12.7" y1="20.32" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="20.32" x2="22.86" y2="15.24" width="0.1524" layer="91"/>
-<junction x="22.86" y="15.24"/>
+<wire x1="12.7" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="17.78" x2="22.86" y2="12.7" width="0.1524" layer="91"/>
+<junction x="22.86" y="12.7"/>
 <pinref part="K2" gate="G$1" pin="3"/>
-<wire x1="12.7" y1="20.32" x2="2.54" y2="20.32" width="0.1524" layer="91"/>
-<junction x="12.7" y="20.32"/>
+<wire x1="12.7" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="91"/>
+<junction x="12.7" y="17.78"/>
 <pinref part="K2" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="15.24" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
-<junction x="12.7" y="15.24"/>
+<wire x1="12.7" y1="12.7" x2="2.54" y2="12.7" width="0.1524" layer="91"/>
+<junction x="12.7" y="12.7"/>
 </segment>
 <segment>
 <wire x1="17.78" y1="63.5" x2="12.7" y2="63.5" width="0.1524" layer="91"/>
@@ -24575,12 +24592,18 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <junction x="30.48" y="106.68"/>
 <pinref part="C2" gate="G$1" pin="-"/>
 </segment>
+<segment>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="25.4" y1="30.48" x2="25.4" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="33.02" x2="12.7" y2="33.02" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="MID" class="0">
 <segment>
 <pinref part="SV1" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="45.72" x2="12.7" y2="45.72" width="0.1524" layer="91"/>
-<label x="17.78" y="45.72" size="1.778" layer="95" xref="yes"/>
+<wire x1="17.78" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
+<label x="17.78" y="50.8" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="+"/>
@@ -24591,8 +24614,8 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <net name="END" class="0">
 <segment>
 <pinref part="SV1" gate="G$1" pin="3"/>
-<wire x1="17.78" y1="48.26" x2="12.7" y2="48.26" width="0.1524" layer="91"/>
-<label x="17.78" y="48.26" size="1.778" layer="95" xref="yes"/>
+<wire x1="17.78" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
+<label x="17.78" y="53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="-"/>
@@ -24602,12 +24625,12 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </net>
 <net name="V-" class="0">
 <segment>
-<wire x1="15.24" y1="10.16" x2="12.7" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="7.62" x2="12.7" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="P-1" gate="1" pin="V-"/>
 <pinref part="K1" gate="G$1" pin="1"/>
 <pinref part="K2" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="10.16" x2="2.54" y2="10.16" width="0.1524" layer="91"/>
-<junction x="12.7" y="10.16"/>
+<wire x1="12.7" y1="7.62" x2="2.54" y2="7.62" width="0.1524" layer="91"/>
+<junction x="12.7" y="7.62"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V-"/>
@@ -24628,15 +24651,20 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <junction x="43.18" y="154.94"/>
 <pinref part="C4" gate="G$1" pin="-"/>
 </segment>
+<segment>
+<pinref part="P-5" gate="1" pin="V-"/>
+<pinref part="SV3" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="30.48" x2="12.7" y2="30.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="V+" class="0">
 <segment>
-<wire x1="15.24" y1="25.4" x2="12.7" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="22.86" x2="12.7" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="V+"/>
 <pinref part="K1" gate="G$1" pin="4"/>
 <pinref part="K2" gate="G$1" pin="4"/>
-<wire x1="12.7" y1="25.4" x2="2.54" y2="25.4" width="0.1524" layer="91"/>
-<junction x="12.7" y="25.4"/>
+<wire x1="12.7" y1="22.86" x2="2.54" y2="22.86" width="0.1524" layer="91"/>
+<junction x="12.7" y="22.86"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V+"/>
@@ -24673,6 +24701,11 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <pinref part="SV2" gate="1" pin="4"/>
 <wire x1="12.7" y1="71.12" x2="17.78" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="V+"/>
+</segment>
+<segment>
+<pinref part="P+7" gate="1" pin="V+"/>
+<pinref part="SV3" gate="G$1" pin="3"/>
+<wire x1="17.78" y1="35.56" x2="12.7" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RECT" class="0">

@@ -24259,8 +24259,8 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="3314J" package3d_urn="urn:adsk.eagle:package:26019/1"/>
 <part name="SV2" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
-<part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.6" package3d_urn="urn:adsk.eagle:package:14272/1"/>
-<part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.6" package3d_urn="urn:adsk.eagle:package:14272/1"/>
+<part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1"/>
+<part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -24477,13 +24477,13 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <instance part="P+6" gate="1" x="20.32" y="71.12" smashed="yes" rot="R270">
 <attribute name="VALUE" x="17.78" y="73.66" size="1.778" layer="96"/>
 </instance>
-<instance part="H1" gate="G$1" x="12.7" y="93.98" smashed="yes">
-<attribute name="NAME" x="14.732" y="94.5642" size="1.778" layer="95"/>
-<attribute name="VALUE" x="14.732" y="91.5162" size="1.778" layer="96"/>
+<instance part="H1" gate="G$1" x="12.7" y="99.06" smashed="yes">
+<attribute name="NAME" x="14.732" y="99.6442" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="96.5962" size="1.778" layer="96"/>
 </instance>
-<instance part="H2" gate="G$1" x="12.7" y="101.6" smashed="yes">
-<attribute name="NAME" x="14.732" y="102.1842" size="1.778" layer="95"/>
-<attribute name="VALUE" x="14.732" y="99.1362" size="1.778" layer="96"/>
+<instance part="H2" gate="G$1" x="12.7" y="91.44" smashed="yes">
+<attribute name="NAME" x="14.732" y="92.0242" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="88.9762" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
